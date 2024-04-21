@@ -4,8 +4,8 @@ import { counterActions } from "../store";
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state) => state.counter);
-  const showCounter = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const showCounter = useSelector((state) => state.counter.showCounter);
   const toggleCounterHandler = () => {
     dispatch(counterActions.toggleCounter());
   };
@@ -15,7 +15,7 @@ const Counter = () => {
   const decrementCounterHandler = () => {
     dispatch(counterActions.decrement());
   };
-  console.log(counterActions, "counterselection");
+  console.log(counterActions.increment(), "counterselection");
 
   return (
     <main className={classes.counter}>
